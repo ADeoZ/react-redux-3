@@ -2,11 +2,11 @@ import { nanoid } from 'nanoid';
 import { ADD_PRODUCT } from '../actions/actionTypes';
 
 const initial_state = [
-  { id: nanoid(), title: 'Товар1', price: 2000, discount: 1850, image: `https://placeimg.com/200/200/tech?${nanoid(5)}` },
-  { id: nanoid(), title: 'Товар2', price: 3700, discount: 0, image: `https://placeimg.com/200/200/tech?${nanoid(5)}` },
-  { id: nanoid(), title: 'Товар3', price: 4500, discount: 2320, image: `https://placeimg.com/200/200/tech?${nanoid(5)}` },
-  { id: nanoid(), title: 'Товар4', price: 5620, discount: 0, image: `https://placeimg.com/200/200/tech?${nanoid(5)}` },
-  { id: nanoid(), title: 'Товар5', price: 1000, discount: 0, image: `https://placeimg.com/200/200/tech?${nanoid(5)}` },
+  { id: nanoid(), title: 'Горный Алтай', price: 65000, discount: 48000, image: `https://placeimg.com/150/150/nature?${nanoid(5)}` },
+  { id: nanoid(), title: 'Камчатка с комфортом', price: 87000, discount: 0, image: `https://placeimg.com/150/150/nature?${nanoid(5)}` },
+  { id: nanoid(), title: 'Велотур по берегам Крыма', price: 32000, discount: 24500, image: `https://placeimg.com/150/150/nature?${nanoid(5)}` },
+  { id: nanoid(), title: 'Байкал за 5 дней', price: 57000, discount: 0, image: `https://placeimg.com/150/150/nature?${nanoid(5)}` },
+  { id: nanoid(), title: 'Сплав по Карелии', price: 47000, discount: 45300, image: `https://placeimg.com/150/150/nature?${nanoid(5)}` },
 ];
 
 export default function marketListReducer(state = initial_state, action) {
@@ -24,7 +24,7 @@ export default function marketListReducer(state = initial_state, action) {
         title,
         price: Number(price),
         discount: Number(discount),
-        image: `${image}?${nanoid(5)}`,
+        image,
       }
       ];
     }

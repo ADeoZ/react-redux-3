@@ -26,21 +26,53 @@ export default function MarketForm() {
   }
 
   return (
-    <form className="MarketForm" onSubmit={handleSubmit}>
-      <label>Название товара
-        <input name="title" onChange={handleChange} value={form.title} />
-      </label>
-      <label>Цена
-        <input name="price" onChange={handleChange} value={form.price} />
-      </label>
-      <label>Цена со скидкой
-        <input name="discount" onChange={handleChange} value={form.discount} />
-      </label>
-      <label>Ссылка на фото товара
-        <input name="image" onChange={handleChange} value={form.image} />
-      </label>
-      <button type="submit">Добавить</button>
-      <button type="reset" onClick={handleReset}>Сбросить</button>
-    </form>
+    <div className="MarketForm">
+      <h2>Добавить новый тур</h2>
+      <form className="MarketForm__form" onSubmit={handleSubmit}>
+        <label>
+          <div className="MarketForm__label">Название товара</div>
+          <input
+            className="MarketForm__input"
+            name="title"
+            onChange={handleChange}
+            value={form.title}
+            required
+          />
+        </label>
+        <label>
+          <div className="MarketForm__label">Цена</div>
+          <input
+            className="MarketForm__input"
+            name="price"
+            onChange={handleChange}
+            value={form.price}
+            required
+          />
+        </label>
+        <label>
+          <div className="MarketForm__label">Цена со скидкой</div>
+          <input
+            className="MarketForm__input"
+            name="discount"
+            onChange={handleChange}
+            value={form.discount}
+          />
+        </label>
+        <label>
+          <div className="MarketForm__label">Ссылка на фото товара</div>
+          <input
+            className="MarketForm__input"
+            name="image"
+            onChange={handleChange}
+            value={form.image}
+            required
+          />
+        </label>
+        <div className="MarketForm__controls">
+          <button type="submit">Добавить</button>
+          <button type="reset" onClick={handleReset}>Сбросить</button>
+        </div>
+      </form>
+    </div>
   )
 }

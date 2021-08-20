@@ -1,10 +1,11 @@
+import { nanoid } from 'nanoid';
 import { CHANGE_PRODUCT_FORM, RESET_PRODUCT_FORM } from "../actions/actionTypes";
 
 const initial_state = {
   title: '',
   price: '',
   discount: '',
-  image: '',
+  image: `https://placeimg.com/150/150/nature?${nanoid(5)}`,
 };
 
 export default function marketFormReducer(state = initial_state, action) {

@@ -1,20 +1,18 @@
 import { useSelector } from "react-redux";
+import MarketProduct from "./MarketProduct";
 
 export default function MarketList() {
   const goods = useSelector((state) => state.marketList);
 
   return (
-    <ul>
-      {goods.map((product) =>
-        <li key={product.id}>
-          <img src={product.image} alt={product.title} />
-          {product.price} - {product.discount}
-          <a href={`/buy/${product.id}`}>
-            {product.title}
-          </a>
-        </li>
-      )
-      }
-    </ul >
+    <div className="MarketList">
+      <h2>Приглядитесь к этим предложениям</h2>
+      <ul className="MarketList__list">
+        {goods.map((product) =>
+          <MarketProduct key={product.id} product={product} />
+        )
+        }
+      </ul >
+    </div>
   );
 }
